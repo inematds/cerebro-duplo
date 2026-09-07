@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auditar o cérebro"
+  short_description: "Pontua os 4 pilares com evidências e salva relatório datado"
+  default_prompt: "Rode $auditar neste cérebro."

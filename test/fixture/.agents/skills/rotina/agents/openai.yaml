@@ -1,0 +1,6 @@
+interface:
+  display_name: "Rotina"
+  short_description: "Cria uma rotina recorrente com gatilho, saída e registro de execuções"
+  default_prompt: "Use $rotina para definir uma rotina recorrente do meu cérebro."
+policy:
+  allow_implicit_invocation: false

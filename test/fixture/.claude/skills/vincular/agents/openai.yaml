@@ -1,0 +1,6 @@
+interface:
+  display_name: "Vincular"
+  short_description: "Adiciona uma rota no manual do agente para uma fonte, pasta ou projeto"
+  default_prompt: "Use $vincular para adicionar esta fonte às rotas do meu cérebro."
+policy:
+  allow_implicit_invocation: false

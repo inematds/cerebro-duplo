@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evoluir"
+  short_description: "Fecha uma lacuna da auditoria com um artefato entregue e verificável"
+  default_prompt: "Use $evoluir para fechar a principal lacuna da última auditoria do meu cérebro."
+policy:
+  allow_implicit_invocation: false

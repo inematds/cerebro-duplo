@@ -1,0 +1,6 @@
+interface:
+  display_name: "Entrevista"
+  short_description: "Constrói contexto por entrevistas de uma pergunta por vez, salvando cada resposta"
+  default_prompt: "Use $entrevista para explorar este tema e salvar cada resposta."
+policy:
+  allow_implicit_invocation: false

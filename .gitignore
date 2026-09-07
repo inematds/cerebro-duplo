@@ -1,0 +1,13 @@
+# temporários dos testes e do script
+*.duplo-tmp
+.duplo-tmp
+test/fixture/registro-uso.md
+
+# editores e sistema
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# dependências que algum asset de skill possa puxar
+node_modules/

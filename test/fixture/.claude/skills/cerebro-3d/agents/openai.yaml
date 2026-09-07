@@ -1,0 +1,6 @@
+interface:
+  display_name: "Cérebro 3D"
+  short_description: "Gera um globo 3D interativo e local do conhecimento do segundo cérebro"
+  default_prompt: "Use $cerebro-3d para transformar meu segundo cérebro em um globo 3D com as categorias que eu escolher."
+policy:
+  allow_implicit_invocation: false

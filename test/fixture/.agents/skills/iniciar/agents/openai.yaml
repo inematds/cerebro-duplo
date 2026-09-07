@@ -1,0 +1,6 @@
+interface:
+  display_name: "Iniciar o cérebro"
+  short_description: "Entrevista de 7 perguntas que monta ou atualiza o contexto do segundo cérebro"
+  default_prompt: "Use $iniciar para montar ou atualizar o contexto do meu segundo cérebro."
+policy:
+  allow_implicit_invocation: false

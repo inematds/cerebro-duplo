@@ -1,0 +1,6 @@
+interface:
+  display_name: "Qual agente?"
+  short_description: "Decide entre Claude Code e Codex, modelo e esforço, e devolve o comando duplo.sh"
+  default_prompt: "Use $qual-agente para decidir com qual agente, modelo e esforço eu faço esta tarefa."
+policy:
+  allow_implicit_invocation: false

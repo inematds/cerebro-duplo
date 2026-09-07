@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wiki"
+  short_description: "Transforma fontes brutas em páginas de wiki interligadas, consulta e revisa"
+  default_prompt: "Use $wiki para ingerir as fontes novas e atualizar a wiki do meu cérebro."
+policy:
+  allow_implicit_invocation: false
