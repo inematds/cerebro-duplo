@@ -4,6 +4,10 @@ Playbook + ferramental para usar **o mesmo segundo cérebro** (a pasta de Markdo
 
 Bash puro. Sem dependências. Versão 1.0.0.
 
+## 📖 Guia de uso
+
+Guia completo (landing + passo a passo): **https://inematds.github.io/cerebro-duplo/guia/**
+
 ## O problema
 
 Você tem um segundo cérebro: contexto, decisões, projetos, wiki, rotinas. Dois agentes conseguem lê-lo, mas cada um por uma porta diferente:
