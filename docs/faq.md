@@ -27,7 +27,7 @@ São a mesma ideia em runtimes diferentes: quanto o modelo "pensa" antes de resp
 **Quanto custa em dinheiro?**
 O cerebro-duplo não sabe e não estima. Registra sessões e minutos; o custo vem da tabela de preços do provedor e do painel da sua conta. Veja `docs/custo-e-cota.md`.
 
-**Posso usar com o cérebro em inglês (AIS-OS)?**
+**Posso usar com um cérebro em inglês?**
 Sim. O `duplo.sh` só olha caminhos (`AGENTS.md`, `CLAUDE.md`, `.claude/skills`, `.agents/skills`), não o idioma. As duas skills do cerebro-duplo estão em português; traduza o `SKILL.md` se quiser.
 
 **Funciona no Windows?**
