@@ -62,7 +62,7 @@ Comandos gerados (saída real de `--so-mostrar` nesta máquina, Claude Code 2.1.
 ```
 $ duplo.sh --dir test/fixture claude raciocinio --so-mostrar
 perfil: raciocinio (perfis/raciocinio.env)
-comando: cd /…/test/fixture && claude --model fable --effort high --name duplo:raciocinio
+comando: cd /…/test/fixture && claude --model claude-opus-5-5 --effort high --name duplo:raciocinio
 
 $ duplo.sh --dir test/fixture codex rotina --so-mostrar
 perfil: rotina (perfis/rotina.env)
@@ -73,10 +73,10 @@ comando: codex -C /…/test/fixture -m gpt-6-astra -c model_reasoning_effort=\"l
 
 | Perfil | Claude Code | Codex | Para quê |
 |---|---|---|---|
-| `raciocinio` | `fable` / `high` | `gpt-6-astra` / `high` | `/auditar`, `/evoluir`, arquitetura, wiki grande |
+| `raciocinio` | topo (`claude-opus-5-5`) / `high` | `gpt-6-astra` / `high` | `/auditar`, `/evoluir`, arquitetura, wiki grande |
 | `padrao` | `sonnet` / `medium` | `gpt-6-astra` / `medium` | dia a dia |
 | `rotina` | `sonnet` / `low` | `gpt-6-astra` / `low` | achar documento, resumir reunião, e-mail |
-| `codigo` | `fable` / `high` + `--permission-mode acceptEdits` | `gpt-6-astra` / `high` + `-s workspace-write` | código longo, refatoração |
+| `codigo` | topo (`claude-opus-5-5`) / `high` + `--permission-mode acceptEdits` | `gpt-6-astra` / `high` + `-s workspace-write` | código longo, refatoração |
 
 Os nomes de modelo são os do plano desta máquina; edite `perfis/*.env` para o seu. Aliases do Claude Code (`fable`, `opus`, `sonnet`) e níveis de esforço (`low`…`max`) foram lidos do `claude --help`; no Codex, o esforço vai pela chave de configuração `model_reasoning_effort` (ver [docs/comparativo-runtimes.md](docs/comparativo-runtimes.md)).
 

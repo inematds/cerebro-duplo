@@ -12,6 +12,8 @@ DUPLO="$RAIZ/duplo.sh"
 FIXTURE="$RAIZ/test/fixture"
 TMP="$(mktemp -d "${TMPDIR:-/tmp}/cerebro-duplo-teste.XXXXXX")"
 trap 'rm -rf "$TMP"' EXIT
+# Modelo topo fixo nos testes (não depende do ~/.config/inema/modelos.env da máquina).
+export INEMA_CLAUDE_TOPO="claude-opus-5-5"
 
 PASSOU=0; FALHOU=0
 passa() { PASSOU=$((PASSOU + 1)); echo "PASS: $1"; }
@@ -101,7 +103,7 @@ assert "uso resumo roda" 0 "$cod" "$saida"
 assert "uso resumo soma por agente (claude 2 sessões, 45 min)" 0 "$cod" "$saida" '\| claude \| 2 \| 45 \|'
 assert "uso resumo soma por agente+perfil (codex/rotina 1 sessão, 10 min)" 0 "$cod" "$saida" '\| codex \| rotina \| 1 \| 10 \|'
 assert "uso resumo total (3 sessões, 55 min)" 0 "$cod" "$saida" "total: 3 sessões, 55 minutos"
-if grep -q "| fable | high | 30 |" "$U/registro-uso.md"; then passa "registro copia modelo/esforço do perfil"; else falha "registro copia modelo/esforço do perfil" "$(cat "$U/registro-uso.md")"; fi
+if grep -q "| claude-opus-5-5 | high | 30 |" "$U/registro-uso.md"; then passa "registro copia modelo/esforço do perfil"; else falha "registro copia modelo/esforço do perfil" "$(cat "$U/registro-uso.md")"; fi
 saida="$(bash "$DUPLO" --dir "$U" uso registrar gemini rotina 5 "x" 2>&1)"; cod=$?
 assert "uso registrar recusa agente desconhecido" 1 "$cod" "$saida" "agente deve ser claude ou codex"
 saida="$(bash "$DUPLO" --dir "$U" uso registrar claude rotina cinco "x" 2>&1)"; cod=$?
@@ -109,7 +111,7 @@ assert "uso registrar recusa minutos não numéricos" 1 "$cod" "$saida" "minutos
 
 # 11. claude/codex --so-mostrar imprimem comandos plausíveis sem executar
 saida="$(bash "$DUPLO" --dir "$FIXTURE" claude raciocinio --so-mostrar 2>&1)"; cod=$?
-assert "claude --so-mostrar imprime cd + claude --model --effort" 0 "$cod" "$saida" "cd .*test/fixture && claude --model fable --effort high --name duplo:raciocinio"
+assert "claude --so-mostrar imprime cd + claude --model --effort" 0 "$cod" "$saida" "cd .*test/fixture && claude --model claude-opus-5-5 --effort high --name duplo:raciocinio"
 saida="$(bash "$DUPLO" --dir "$FIXTURE" codex rotina --so-mostrar 2>&1)"; cod=$?
 assert "codex --so-mostrar imprime codex -C -m -c model_reasoning_effort" 0 "$cod" "$saida" 'codex -C .*test/fixture -m gpt-6-astra -c model_reasoning_effort=\\"low\\"'
 saida="$(bash "$DUPLO" --dir "$FIXTURE" codex codigo --so-mostrar 2>&1)"; cod=$?

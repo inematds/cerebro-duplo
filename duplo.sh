@@ -12,7 +12,14 @@
 
 set -euo pipefail
 
-DUPLO_VERSAO="1.0.0"
+DUPLO_VERSAO="1.1.0"
+
+# Modelo Claude "topo" central do ecossistema INEMA (~/.config/inema/modelos.env).
+# Os perfis usam ${INEMA_CLAUDE_TOPO:-opus}: sem o arquivo, cai no alias `opus`.
+if [ -z "${INEMA_CLAUDE_TOPO:-}" ] && [ -f "$HOME/.config/inema/modelos.env" ]; then
+  INEMA_CLAUDE_TOPO="$(sed -n 's/^INEMA_CLAUDE_TOPO=//p' "$HOME/.config/inema/modelos.env" | head -1)"
+fi
+export INEMA_CLAUDE_TOPO="${INEMA_CLAUDE_TOPO:-}"
 
 # ---------------------------------------------------------------------------
 # Localização dos arquivos do próprio cerebro-duplo

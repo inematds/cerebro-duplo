@@ -2,6 +2,12 @@
 
 Formato: semver `vX.XX.YY`. Mais recente no topo.
 
+## 1.1.0 — 2026-09-23
+
+- Perfis `raciocinio` e `codigo` usam `${INEMA_CLAUDE_TOPO:-opus}` no lugar de `fable`. Nesta máquina,
+  `duplo.sh` lê o modelo do arquivo central `~/.config/inema/modelos.env` (hoje `claude-opus-5-5`);
+  sem o arquivo, cai no alias `opus`.
+
 ## 1.0.0 — 2026-09-07
 
 Primeira versão.
