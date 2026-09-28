@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>cerebro-duplo — um cérebro, dois agentes</title>
-<meta content="Use o mesmo segundo cérebro (kit astra-2cerebro) com Claude Code e Codex: roteamento por perfil, paridade de manuais e skills, registro de uso e cota. Bash puro, sem dependências." name="description"/>
+<title>cerebro-duplo — one brain, two agents</title>
+<meta content="Use the same second brain (astra-2cerebro kit) with Claude Code and Codex: profile-based routing, parity across manuals and skills, usage and quota tracking. Pure bash, no dependencies." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
@@ -99,7 +99,7 @@
   .ex .card pre{margin:.6em 0 0}
 </style>
 <link href="https://inematds.github.io/cerebro-duplo/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/cerebro-duplo/guia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/cerebro-duplo/guia/es/" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <nav><div class="wrap">
 <a class="brand" href="#top"><span class="emoji">🧠</span> cerebro-duplo</a>
 <span class="sep">|</span>
@@ -109,12 +109,12 @@
 <a class="pro" href="https://inema.pro" rel="noopener" target="_blank">PRO</a>
 </span>
 <div class="links">
-<a class="sec" href="#oque">O que é</a>
-<a class="sec" href="#fluxo">Como funciona</a>
-<a class="sec" href="#guia">Guia de uso</a>
-<a class="sec" href="#exemplos">Exemplos</a>
+<a class="sec" href="#oque">What it is</a>
+<a class="sec" href="#fluxo">How it works</a>
+<a class="sec" href="#guia">User guide</a>
+<a class="sec" href="#exemplos">Examples</a>
 <a class="sec" href="#roadmap">Roadmap</a>
-<button aria-label="Alternar tema" class="tgl" id="themeToggle" title="Alternar tema">🌙</button>
+<button aria-label="Toggle theme" class="tgl" id="themeToggle" title="Toggle theme">🌙</button>
 <a class="btn" href="https://github.com/inematds/cerebro-duplo" rel="noopener" target="_blank">GitHub</a>
 </div>
 </div></nav>
@@ -123,159 +123,159 @@
 <div class="wrap">
 <div>
 <span class="chip">Playbook + CLI · Claude Code × Codex</span>
-<h1>Um cérebro, <span class="amb">dois agentes</span></h1>
-<p class="lead">Use o mesmo segundo cérebro com o Claude Code e com o Codex: o agente e o modelo certos para cada tarefa, manuais e skills sempre iguais, uso registrado. Bash puro, sem dependências.</p>
+<h1>One brain, <span class="amb">two agents</span></h1>
+<p class="lead">Use the same second brain with Claude Code and Codex: the right agent and model for each task, manuals and skills always in sync, and usage tracked. Pure bash, no dependencies.</p>
 <div class="cta">
-<a class="btn" href="#guia">Começar o guia</a>
-<a class="btn ghost" href="https://github.com/inematds/cerebro-duplo" rel="noopener" target="_blank">Ver no GitHub</a>
+<a class="btn" href="#guia">Start the guide</a>
+<a class="btn ghost" href="https://github.com/inematds/cerebro-duplo" rel="noopener" target="_blank">View on GitHub</a>
 </div>
 </div>
-<figure><img alt="Um cérebro em luz âmbar ligado por feixes a dois terminais de computador" src="assets/hero.jpg"/></figure>
+<figure><img alt="A brain glowing amber, connected by beams to two computer terminals" src="../assets/hero.jpg"/></figure>
 </div>
 </header>
 <section id="oque"><div class="wrap">
-<span class="chip">O que é</span>
-<h2>O mesmo cérebro, sem virar dois</h2>
-<p class="sub">Seu segundo cérebro (a pasta de Markdown do kit astra-2cerebro) pode ser lido pelo Claude Code e pelo Codex. Cada um entra por uma porta diferente: <code>CLAUDE.md</code> e <code>.claude/skills</code> num lado, <code>AGENTS.md</code> e <code>.agents/skills</code> no outro. O cerebro-duplo mantém as portas iguais e decide qual usar.</p>
+<span class="chip">What it is</span>
+<h2>The same brain, without becoming two</h2>
+<p class="sub">Your second brain (the astra-2cerebro kit’s Markdown folder) can be read by Claude Code and Codex. Each one enters through a different door: <code>CLAUDE.md</code> e <code>.claude/skills</code> on one side, <code>AGENTS.md</code> e <code>.agents/skills</code> on the other side. cerebro-duplo keeps the interfaces the same and decides which one to use.</p>
 <div class="grid g3">
-<div class="card"><h3>🪞 Paridade</h3><p><code>duplo.sh verificar</code> confere que <code>AGENTS.md</code> = <code>CLAUDE.md</code>, que cada skill está espelhada byte a byte e que cada uma tem o <code>openai.yaml</code> do Codex. <code>sync</code> conserta. A skill <code>duplo-verificar</code> relata e propõe, sem mexer sozinha.</p></div>
-<div class="card"><h3>🧭 Roteamento</h3><p>A skill <code>qual-agente</code> lê o pedido, escolhe agente + modelo + esforço com uma tabela (MCP configurado, repo aberto, raciocínio pesado, rotina barata) e devolve o comando. Perfis <code>.env</code> guardam modelo e esforço por tipo de tarefa.</p></div>
-<div class="card"><h3>📒 Uso e cota</h3><p><code>uso registrar</code> anota cada sessão em <code>registro-uso.md</code>; <code>uso resumo</code> soma por agente e perfil. Sem preço inventado: minutos e sessões aqui, dinheiro na tabela do provedor.</p></div>
+<div class="card"><h3>🪞 Parity</h3><p><code>duplo.sh verificar</code> checks that <code>AGENTS.md</code> = <code>CLAUDE.md</code>, that each skill is mirrored byte for byte, and that each one has the <code>openai.yaml</code> from Codex. <code>sync</code> fixes it. The skill <code>duplo-verificar</code> reports and proposes changes without making them on its own.</p></div>
+<div class="card"><h3>🧭 Routing</h3><p>The skill <code>qual-agente</code> reads the request, chooses the agent, model, and effort level using a table (MCP configured, repo open, heavy reasoning, low-cost routine), and returns the command. Profiles <code>.env</code> store the model and effort level for each task type.</p></div>
+<div class="card"><h3>📒 Usage and quota</h3><p><code>uso registrar</code> logs each session in <code>registro-uso.md</code>; <code>uso resumo</code> totals by agent and profile. No made-up prices: minutes and sessions here, money in the provider’s pricing table.</p></div>
 </div>
 </div></section>
 <section id="fluxo"><div class="wrap">
-<span class="chip">Como funciona</span>
-<h2>Do pedido ao registro</h2>
-<p class="sub">Um ciclo curto, repetido em cada sessão. As flags de modelo e esforço são as reais dos dois CLIs (lidas do <code>--help</code>): <code>--model</code>/<code>--effort</code> no Claude Code, <code>-m</code>/<code>-c model_reasoning_effort</code> no Codex.</p>
+<span class="chip">How it works</span>
+<h2>From request to log entry</h2>
+<p class="sub">A short cycle, repeated in each session. The model and effort flags are the actual ones from both CLIs (read from <code>--help</code>): <code>--model</code>/<code>--effort</code> in Claude Code, <code>-m</code>/<code>-c model_reasoning_effort</code> in Codex.</p>
 <div class="flow">
-<span>pedido</span><span class="arr">→</span>
-<span>/qual-agente ou $qual-agente</span><span class="arr">→</span>
-<span>agente + perfil</span><span class="arr">→</span>
+<span>request</span><span class="arr">→</span>
+<span>/qual-agente or $qual-agente</span><span class="arr">→</span>
+<span>agent + profile</span><span class="arr">→</span>
 <span>duplo.sh claude|codex &lt;perfil&gt;</span><span class="arr">→</span>
-<span>trabalho no cérebro</span><span class="arr">→</span>
+<span>work on the brain</span><span class="arr">→</span>
 <span>duplo.sh sync</span><span class="arr">→</span>
 <span>duplo.sh uso registrar</span>
 </div>
 <div class="grid g4" style="margin-top:26px">
-<div class="card"><div class="num">1</div><h3>Rotear</h3><p>MCP específico → o agente que o tem. Código → onde o repo está aberto. Auditoria, arquitetura, wiki grande → <code>raciocinio</code>. Achar, resumir, redigir → <code>rotina</code>.</p></div>
-<div class="card"><div class="num">2</div><h3>Abrir</h3><p><code>duplo.sh claude raciocinio</code> imprime e executa <code>cd cérebro &amp;&amp; claude --model fable --effort high</code>. <code>--so-mostrar</code> só imprime.</p></div>
-<div class="card"><div class="num">3</div><h3>Sincronizar</h3><p>Editou o manual ou uma skill? <code>sync</code> regrava o espelho a partir do canônico (<code>AGENTS.md</code>, <code>.claude/skills</code>). Nunca apaga; avisa.</p></div>
-<div class="card"><div class="num">4</div><h3>Registrar</h3><p>Uma linha por sessão: agente, perfil, modelo, esforço, minutos, tarefa. Na quinta-feira, <code>uso resumo</code> diz onde a cota foi.</p></div>
+<div class="card"><div class="num">1</div><h3>Route</h3><p>Specific MCP → the agent that has it. Code → where the repo is open. Audit, architecture, large wiki → <code>raciocinio</code>. Find, summarize, draft → <code>rotina</code>.</p></div>
+<div class="card"><div class="num">2</div><h3>Open</h3><p><code>duplo.sh claude raciocinio</code> prints and executes <code>cd cérebro &amp;&amp; claude --model fable --effort high</code>. <code>--so-mostrar</code> only prints.</p></div>
+<div class="card"><div class="num">3</div><h3>Sync</h3><p>Did you edit the manual or a skill? <code>sync</code> rewrites the mirror from the canonical version (<code>AGENTS.md</code>, <code>.claude/skills</code>). Never deletes; warns.</p></div>
+<div class="card"><div class="num">4</div><h3>Record</h3><p>One line per session: agent, profile, model, effort, minutes, task. On Thursday, <code>uso resumo</code> shows where the quota went.</p></div>
 </div>
 </div></section>
 <section id="pre"><div class="wrap">
-<span class="chip">Pré-requisitos</span>
-<h2>O que precisa existir</h2>
-<p class="sub">Um cérebro do astra-2cerebro e bash. Os agentes só são necessários na hora de abrir uma sessão.</p>
+<span class="chip">Prerequisites</span>
+<h2>What needs to exist</h2>
+<p class="sub">One astra-2cerebro brain and bash. Agents are only needed when starting a session.</p>
 <div class="grid g3">
-<div class="card"><h3>Um cérebro</h3><p>Pasta criada pelo kit astra-2cerebro, com <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>.claude/skills/</code> e <code>.agents/skills/</code>.</p><pre><span class="c"># se ainda não tem</span>
+<div class="card"><h3>One brain</h3><p>Folder created by the astra-2cerebro kit, with <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>.claude/skills/</code> e <code>.agents/skills/</code>.</p><pre><span class="c"># if you don't have one yet</span>
 <span class="k">git clone</span> <span class="s">https://github.com/inematds/astra-2cerebro.git</span>
-<span class="c"># siga o INSTALAR.md do kit</span></pre></div>
-<div class="card"><h3>bash + coreutils</h3><p>Linux, macOS, Git Bash ou WSL. <code>diff</code>, <code>awk</code>, <code>cp</code>. Nada de Node, Python ou pacotes.</p><pre><span class="k">bash</span> --version   <span class="c"># 4+</span>
+<span class="c"># follow the kit's INSTALAR.md</span></pre></div>
+<div class="card"><h3>bash + coreutils</h3><p>Linux, macOS, Git Bash, or WSL. <code>diff</code>, <code>awk</code>, <code>cp</code>. No Node, Python, or packages.</p><pre><span class="k">bash</span> --version   <span class="c"># 4+</span>
 <span class="k">diff</span> --version
 <span class="k">awk</span> --version</pre></div>
-<div class="card"><h3>Claude Code e/ou Codex</h3><p>Opcionais. <code>verificar</code>, <code>sync</code> e <code>uso</code> funcionam sem nenhum dos dois.</p><pre><span class="k">claude</span> --version   <span class="c"># testado: 2.1.263</span>
-<span class="k">codex</span> --version    <span class="c"># testado: 0.153.3</span></pre></div>
+<div class="card"><h3>Claude Code and/or Codex</h3><p>Optional. <code>verificar</code>, <code>sync</code> e <code>uso</code> work without either one.</p><pre><span class="k">claude</span> --version   <span class="c"># tested: 2.1.263</span>
+<span class="k">codex</span> --version    <span class="c"># tested: 0.153.3</span></pre></div>
 </div>
 </div></section>
 <section id="guia"><div class="wrap">
-<span class="chip">Guia de uso · passo a passo</span>
-<h2>Instalar, verificar, rotear, registrar</h2>
-<p class="sub">Comandos reais. Substitua <code>~/meu-cerebro</code> pela pasta do seu cérebro.</p>
+<span class="chip">User guide · step by step</span>
+<h2>Install, verify, route, log</h2>
+<p class="sub">Real commands. Replace <code>~/meu-cerebro</code> through your brain’s folder.</p>
 <div class="step"><div class="b">1</div><div>
-<h3>Instalar no cérebro</h3>
-<p>Clona o repo e copia as duas skills para <code>.claude/skills</code> e <code>.agents/skills</code>, e o <code>duplo.sh</code> (com <code>perfis/</code> e <code>modelos/</code>) para <code>scripts/</code>. Roda o <code>verificar</code> no final.</p>
+<h3>Install in the brain</h3>
+<p>Clones the repo and copies the two skills to <code>.claude/skills</code> e <code>.agents/skills</code>, e o <code>duplo.sh</code> (with <code>perfis/</code> e <code>modelos/</code>) to <code>scripts/</code>. Runs the <code>verificar</code> at the end.</p>
 <pre><span class="k">git clone</span> <span class="s">https://github.com/inematds/cerebro-duplo.git</span>
 <span class="k">cd</span> cerebro-duplo
 <span class="k">bash</span> instalar.sh ~/meu-cerebro</pre>
 </div></div>
 <div class="step"><div class="b">2</div><div>
-<h3>Verificar a paridade</h3>
-<p>Manual idêntico, skills espelhadas, <code>openai.yaml</code> presente, rotas do manual válidas. Código 1 se houver PROBLEMA; rota quebrada é só AVISO (o <code>/iniciar</code> cria vários arquivos depois).</p>
+<h3>Check parity</h3>
+<p>Identical manual, mirrored skills, <code>openai.yaml</code> present, valid manual routes. Exit code 1 if there’s a PROBLEM; a broken route is just a WARNING (the <code>/iniciar</code> creates multiple files afterward).</p>
 <pre><span class="k">cd</span> ~/meu-cerebro
 <span class="k">bash</span> scripts/duplo.sh verificar
-<span class="c"># OK: AGENTS.md e CLAUDE.md são idênticos</span>
-<span class="c"># OK: 10 skills idênticas nos dois lados</span>
-<span class="c"># == resultado: 0 problema(s), 6 aviso(s)</span></pre>
+<span class="c"># OK: AGENTS.md and CLAUDE.md are identical</span>
+<span class="c"># OK: 10 identical skills on both sides</span>
+<span class="c"># == result: 0 issue(s), 6 warning(s)</span></pre>
 </div></div>
 <div class="step"><div class="b">3</div><div>
-<h3>Ajustar os perfis ao seu plano</h3>
-<p>Os nomes de modelo que vêm no repo são os desta máquina. Edite <code>scripts/perfis/*.env</code>. Fontes confiáveis: <code>claude --help</code> (aliases <code>fable</code>, <code>opus</code>, <code>sonnet</code>; esforço <code>low</code>…<code>max</code>) e o seu <code>~/.codex/config.toml</code>.</p>
+<h3>Adjust the profiles to your plan</h3>
+<p>The model names included in the repo are for this machine. Edit <code>scripts/perfis/*.env</code>. Trusted sources: <code>claude --help</code> (aliases <code>fable</code>, <code>opus</code>, <code>sonnet</code>; effort <code>low</code>…<code>max</code>) and your <code>~/.codex/config.toml</code>.</p>
 <pre><span class="k">bash</span> scripts/duplo.sh perfis
-<span class="c">#   codigo       claude: claude-opus-5-5/high     codex: gpt-6-astra/high</span>
-<span class="c">#   padrao       claude: sonnet/medium  codex: gpt-6-astra/medium</span>
-<span class="c">#   raciocinio   claude: claude-opus-5-5/high   codex: gpt-6-astra/high</span>
-<span class="c">#   rotina       claude: sonnet/low     codex: gpt-6-astra/low</span>
+<span class="c">#   code         claude: claude-opus-5-5/high     codex: gpt-6-astra/high</span>
+<span class="c">#   standard     claude: sonnet/medium  codex: gpt-6-astra/medium</span>
+<span class="c">#   reasoning    claude: claude-opus-5-5/high   codex: gpt-6-astra/high</span>
+<span class="c">#   routine      claude: sonnet/low     codex: gpt-6-astra/low</span>
 <span class="k">nano</span> scripts/perfis/padrao.env</pre>
 </div></div>
 <div class="step"><div class="b">4</div><div>
-<h3>Perguntar qual agente usar</h3>
-<p>Dentro de qualquer sessão. A skill responde em quatro linhas: agente · perfil · modelo/esforço, dois motivos, o comando, e a linha de registro para o fim.</p>
-<pre><span class="c"># no Claude Code</span>
+<h3>Ask which agent to use</h3>
+<p>Inside any session. The skill responds in four lines: agent · profile · model/effort, two reasons, the command, and the log entry for the end.</p>
+<pre><span class="c"># in Claude Code</span>
 <span class="k">/qual-agente</span> preciso auditar o cérebro, faz um mês que não rodo
-<span class="c"># no Codex</span>
+<span class="c"># in Codex</span>
 <span class="k">$qual-agente</span> preciso auditar o cérebro, faz um mês que não rodo
 
-<span class="c"># resposta típica:</span>
-<span class="c"># codex · raciocinio · gpt-6-astra/high</span>
-<span class="c"># Auditoria é raciocínio pesado: modelo barato infla a nota.</span>
-<span class="c"># Codex porque o Claude Code já gastou mais cota esta semana.</span>
+<span class="c"># typical response:</span>
+<span class="c"># codex · reasoning · gpt-6-astra/high</span>
+<span class="c"># Auditing requires heavy reasoning: a cheap model inflates the score.</span>
+<span class="c"># Codex because Claude Code has already used more of its quota this week.</span>
 <span class="c"># bash scripts/duplo.sh codex raciocinio</span>
-<span class="c"># ao fechar: bash scripts/duplo.sh uso registrar codex raciocinio 25 "auditoria mensal"</span></pre>
+<span class="c"># when closing: bash scripts/duplo.sh uso registrar codex raciocinio 25 "auditoria mensal"</span></pre>
 </div></div>
 <div class="step"><div class="b">5</div><div>
-<h3>Abrir o agente com o perfil</h3>
-<p>O script imprime o comando antes de executar. Com <code>--so-mostrar</code> só imprime (bom para conferir as flags sem gastar cota).</p>
+<h3>Open the agent with the profile</h3>
+<p>The script prints the command before running it. With <code>--so-mostrar</code> only prints (useful for checking the flags without using quota).</p>
 <pre><span class="k">bash</span> scripts/duplo.sh claude raciocinio --so-mostrar
-<span class="c"># comando: cd ~/meu-cerebro &amp;&amp; claude --model fable --effort high --name duplo:raciocinio</span>
+<span class="c"># command: cd ~/meu-cerebro &amp;&amp; claude --model fable --effort high --name duplo:raciocinio</span>
 
 <span class="k">bash</span> scripts/duplo.sh codex rotina --so-mostrar
-<span class="c"># comando: codex -C ~/meu-cerebro -m gpt-6-astra -c model_reasoning_effort=\"low\"</span>
+<span class="c"># command: codex -C ~/meu-cerebro -m gpt-6-astra -c model_reasoning_effort=\"low\"</span>
 
-<span class="k">bash</span> scripts/duplo.sh codex raciocinio      <span class="c"># abre de verdade</span></pre>
+<span class="k">bash</span> scripts/duplo.sh codex raciocinio      <span class="c"># actually opens</span></pre>
 </div></div>
 <div class="step"><div class="b">6</div><div>
-<h3>Sincronizar depois de editar</h3>
-<p>Edite sempre o canônico (<code>AGENTS.md</code>, <code>.claude/skills/...</code>). O <code>sync</code> regrava o outro lado. <code>--fonte claude</code> inverte o sentido do manual quando a edição boa está no <code>CLAUDE.md</code>.</p>
+<h3>Sync after editing</h3>
+<p>Always edit the canonical version (<code>AGENTS.md</code>, <code>.claude/skills/...</code>). O <code>sync</code> rewrites the other side. <code>--fonte claude</code> reverses the direction in the manual when the good edit is in <code>CLAUDE.md</code>.</p>
 <pre><span class="k">bash</span> scripts/duplo.sh sync                  <span class="c"># AGENTS.md → CLAUDE.md; .claude/skills → .agents/skills</span>
 <span class="k">bash</span> scripts/duplo.sh sync --fonte claude   <span class="c"># CLAUDE.md → AGENTS.md</span>
-<span class="k">bash</span> scripts/duplo.sh verificar             <span class="c"># 0 problema(s)</span></pre>
+<span class="k">bash</span> scripts/duplo.sh verificar             <span class="c"># 0 issue(s)</span></pre>
 </div></div>
 <div class="step"><div class="b">7</div><div>
-<h3>Registrar o uso e ler o resumo</h3>
-<p>Uma linha por sessão em <code>registro-uso.md</code> (criado do template na primeira vez). O resumo é o que alimenta a regra de cota: semana apertada, cai um degrau ou troca de agente.</p>
+<h3>Record usage and read the summary</h3>
+<p>One line per session in <code>registro-uso.md</code> (created from the template the first time). The summary is what drives the quota rule: when the week is tight, step down one level or switch agents.</p>
 <pre><span class="k">bash</span> scripts/duplo.sh uso registrar codex raciocinio 25 <span class="s">"auditoria mensal"</span>
 <span class="k">bash</span> scripts/duplo.sh uso registrar claude rotina 8 <span class="s">"resumo reunião 06/09"</span>
 <span class="k">bash</span> scripts/duplo.sh uso resumo
-<span class="c"># | Agente | Sessões | Minutos |</span>
+<span class="c"># | Agent | Sessions | Minutes |</span>
 <span class="c"># | claude | 1 | 8 |</span>
 <span class="c"># | codex  | 1 | 25 |</span>
-<span class="c"># total: 2 sessões, 33 minutos</span></pre>
+<span class="c"># total: 2 sessions, 33 minutes</span></pre>
 </div></div>
 <div class="step"><div class="b">8</div><div>
-<h3>Relatório de paridade pelo agente</h3>
-<p>A skill <code>duplo-verificar</code> roda o <code>verificar</code> e transforma a saída num relatório curto com um conserto por item. Não conserta sozinha: termina perguntando se pode aplicar.</p>
+<h3>Agent parity report</h3>
+<p>The skill <code>duplo-verificar</code> runs the <code>verificar</code> and turns the output into a short report with one fix per item. It doesn’t fix anything on its own: it ends by asking if it can apply the changes.</p>
 <pre><span class="k">/duplo-verificar</span>       <span class="c"># Claude Code</span>
 <span class="k">$duplo-verificar</span>       <span class="c"># Codex</span></pre>
 </div></div>
-<h3 style="margin:34px 0 6px">Tabela de roteamento (resumo)</h3>
-<p class="mut" style="margin:0 0 10px">A versão completa, com justificativas e regras de cota, está em <a href="https://github.com/inematds/cerebro-duplo/blob/main/docs/roteamento.md">docs/roteamento.md</a>.</p>
+<h3 style="margin:34px 0 6px">Routing table (summary)</h3>
+<p class="mut" style="margin:0 0 10px">The complete version, with explanations and quota rules, is at <a href="https://github.com/inematds/cerebro-duplo/blob/main/docs/roteamento.md">docs/roteamento.md</a>.</p>
 <div class="tblwrap"><table class="tbl">
-<tr><th>Tarefa</th><th>Agente</th><th>Perfil</th></tr>
-<tr><td>Usa um MCP específico (calendário, e-mail, navegador)</td><td>o que <strong>tem o MCP</strong> configurado</td><td><code>padrao</code></td></tr>
-<tr><td>Código longo, refatoração, script de conexão</td><td>onde o <strong>repo já está aberto</strong></td><td><code>codigo</code></td></tr>
-<tr><td>Auditoria, arquitetura, decisão difícil, wiki grande</td><td>qualquer um (mais cota sobrando)</td><td><code>raciocinio</code></td></tr>
-<tr><td>Achar documento, resumir reunião, redigir e-mail</td><td>qualquer um</td><td><code>rotina</code></td></tr>
-<tr><td>Entrevista, conversa de descoberta</td><td>o que você prefere conversar</td><td><code>padrao</code></td></tr>
-<tr><td>Rotina agendada, sem supervisão</td><td>o que já tem o agendamento</td><td><code>rotina</code></td></tr>
+<tr><th>Task</th><th>Agent</th><th>Profile</th></tr>
+<tr><td>Uses a specific MCP (calendar, email, browser)</td><td>what <strong>has the MCP</strong> configured</td><td><code>padrao</code></td></tr>
+<tr><td>Long code, refactoring, connection script</td><td>where the <strong>repo is already open</strong></td><td><code>codigo</code></td></tr>
+<tr><td>Audit, architecture, difficult decision, large wiki</td><td>either one (more quota available)</td><td><code>raciocinio</code></td></tr>
+<tr><td>Find a document, summarize a meeting, draft an email</td><td>either one</td><td><code>rotina</code></td></tr>
+<tr><td>Interview, discovery conversation</td><td>what you’d rather discuss</td><td><code>padrao</code></td></tr>
+<tr><td>Scheduled routine, without supervision</td><td>what already has the scheduling</td><td><code>rotina</code></td></tr>
 </table></div>
 </div></section>
 <section id="exemplos"><div class="wrap">
-<span class="chip">Exemplos</span>
-<h2>Saídas reais</h2>
-<p class="sub">Capturadas nesta máquina contra <code>test/fixture</code>, um cérebro pequeno do kit.</p>
+<span class="chip">Examples</span>
+<h2>Real outputs</h2>
+<p class="sub">Captured on this machine against <code>test/fixture</code>, a small brain for the kit.</p>
 <div class="ex">
-<div class="card"><h3>Paridade quebrada e consertada</h3><p>Uma linha a mais no <code>CLAUDE.md</code> e uma skill editada só no espelho.</p>
+<div class="card"><h3>Parity broken and fixed</h3><p>One more line in the <code>CLAUDE.md</code> and a skill edited only in the mirror.</p>
 <pre><span class="k">$</span> duplo.sh --dir cerebro verificar
 PROBLEMA: AGENTS.md e CLAUDE.md divergem (diff abaixo)
     +- linha só no CLAUDE.md
@@ -291,7 +291,7 @@ skills: 1 sincronizada(s) .claude/skills -&gt; .agents/skills
 OK: AGENTS.md e CLAUDE.md são idênticos
 OK: 8 skills idênticas nos dois lados
 == resultado: 0 problema(s), 6 aviso(s)</pre></div>
-<div class="card"><h3>Testes</h3><p><code>bash test/testes.sh</code>: 38 asserções cobrindo verificar, sync, uso, perfis, instalador.</p>
+<div class="card"><h3>Tests</h3><p><code>bash test/testes.sh</code>: 38 assertions covering verify, sync, usage, profiles, and installer.</p>
 <pre>PASS: verificar passa na fixture íntegra
 PASS: verificar falha quando AGENTS.md e CLAUDE.md divergem
 PASS: sync conserta o manual a partir de AGENTS.md
@@ -307,17 +307,17 @@ PASS: duplo.sh instalado verifica o cérebro com as 10 skills
 </div></section>
 <section id="roadmap"><div class="wrap">
 <span class="chip">Roadmap</span>
-<h2>O que existe e o que vem</h2>
-<p class="sub">A 1.0.0 fecha o ciclo verificar → rotear → registrar. O resto é opcional e depende de uso real.</p>
-<div class="phase"><div class="tag">1.0.0</div><div class="d"><strong>Ciclo completo (feito)</strong><span><code>duplo.sh</code> com verificar, sync, claude/codex por perfil, uso; skills <code>qual-agente</code> e <code>duplo-verificar</code>; 4 perfis; instalador; 38 testes; 6 documentos.</span></div></div>
-<div class="phase"><div class="tag">próximo</div><div class="d"><strong>Hook de pre-commit pronto</strong><span>Script opcional que instala o <code>verificar</code> como pre-commit no cérebro versionado (hoje é um trecho em <code>docs/paridade.md</code>).</span></div></div>
-<div class="phase"><div class="tag">próximo</div><div class="d"><strong>Terceiro agente</strong><span>Bloco <code>DUPLO_&lt;AGENTE&gt;_*</code> nos perfis e <code>cmd_&lt;agente&gt;</code> no script para qualquer runtime que leia <code>AGENTS.md</code> (o caminho está em <code>docs/migracao.md</code>).</span></div></div>
-<div class="phase"><div class="tag">ideia</div><div class="d"><strong>Resumo semanal como rotina</strong><span>Uma <code>/rotina</code> do kit que roda <code>uso resumo</code> toda sexta e anota a leitura em <code>rotinas/registro.md</code>.</span></div></div>
+<h2>What exists and what’s coming</h2>
+<p class="sub">Version 1.0.0 completes the verify → route → record cycle. Everything else is optional and depends on actual usage.</p>
+<div class="phase"><div class="tag">1.0.0</div><div class="d"><strong>Full cycle (done)</strong><span><code>duplo.sh</code> with check, sync, claude/codex by profile, usage; skills <code>qual-agente</code> e <code>duplo-verificar</code>; 4 profiles; installer; 38 tests; 6 documents.</span></div></div>
+<div class="phase"><div class="tag">next</div><div class="d"><strong>Pre-commit hook ready</strong><span>Optional script that installs the <code>verificar</code> like pre-commit in the versioned brain (today it’s a snippet in <code>docs/paridade.md</code>).</span></div></div>
+<div class="phase"><div class="tag">next</div><div class="d"><strong>Third agent</strong><span>Block <code>DUPLO_&lt;AGENTE&gt;_*</code> in the profiles and <code>cmd_&lt;agente&gt;</code> in the script for any runtime that can read <code>AGENTS.md</code> (the path is in <code>docs/migracao.md</code>).</span></div></div>
+<div class="phase"><div class="tag">idea</div><div class="d"><strong>Weekly summary as a routine</strong><span>One <code>/rotina</code> from the kit that runs <code>uso resumo</code> every Friday and records the reading in <code>rotinas/registro.md</code>.</span></div></div>
 </div></section>
 <footer>
 <div class="wrap">
 <div class="pill">bash</div><div class="pill">Claude Code</div><div class="pill">Codex CLI</div><div class="pill">astra-2cerebro</div><div class="pill">MIT</div>
-<p style="margin-top:18px">cerebro-duplo · construído sobre o kit <a href="https://github.com/inematds/astra-2cerebro">astra-2cerebro</a> ·
+<p style="margin-top:18px">cerebro-duplo · built on the kit <a href="https://github.com/inematds/astra-2cerebro">astra-2cerebro</a> ·
       <a href="https://github.com/inematds/cerebro-duplo">github.com/inematds/cerebro-duplo</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
 </div>

@@ -1,5 +1,7 @@
 # cerebro-duplo — um cérebro, dois agentes
 
+**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+
 Playbook + ferramental para usar **o mesmo segundo cérebro** (a pasta de Markdown criada pelo kit [astra-2cerebro](https://github.com/inematds/astra-2cerebro)) com o **Claude Code** (modelos Claude) e com o **Codex CLI** (modelos da OpenAI), escolhendo o agente, o modelo e o esforço certos para cada tarefa, mantendo manuais e skills em paridade, e registrando uso por sessão.
 
 Bash puro. Sem dependências. Versão 1.0.0.
